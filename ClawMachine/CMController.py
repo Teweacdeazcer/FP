@@ -1,4 +1,3 @@
-
 from ClawMachine import ClawMachine
 from CMView import CMView
 

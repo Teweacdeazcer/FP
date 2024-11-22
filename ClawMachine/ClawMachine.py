@@ -1,4 +1,3 @@
-
 import random
 from Machine import Machine
 from DollDTO import DollDTO

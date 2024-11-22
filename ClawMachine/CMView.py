@@ -1,4 +1,3 @@
-
 class CMView:
 
     def displayDolls(self, dolls):

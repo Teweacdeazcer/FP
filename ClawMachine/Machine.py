@@ -4,7 +4,7 @@ class Machine:
         self.amount = 0
 
     def addAmount(self, amount):
-        if self.amount > 0:
+        if amount > 0:
             self.amount += amount
             print(f"{amount}원이 추가되었습니다. 현재 잔액: {self.amount}원")
         else:

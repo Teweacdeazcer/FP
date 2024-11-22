@@ -1,5 +1,5 @@
 
-from ClaswMachine import ClawMachine
+from ClawMachine import ClawMachine
 from CMView import CMView
 
 class CMController:
@@ -7,7 +7,7 @@ class CMController:
         self.machine = ClawMachine("인형뽑기 기계")  # ClawMachine 객체 생성
         self.view = CMView()
 
-    def start_game(self):
+    def run(self):
         while True:
             self.view.displayDolls(self.machine.dolls)
             self.view.displayMessage(f"현재 잔액: {self.machine.getAmount()}원")
@@ -17,10 +17,10 @@ class CMController:
                 amount = int(self.view.getUserinput("추가할 금액을 입력하세요: "))
                 self.machine.addAmount(amount)
             elif choice == "2":
-                doll_index = int(self.view.getUserinput("인형의 번호를 선택하세요(기회 1번에 2500원): ")) - 1
-                if 0 <= doll_index < len(self.machine.dolls):
-                    selected_doll = self.machine.dolls[doll_index]
-                    self.machine.attemptGrab(selected_doll)
+                dollsIndex = int(self.view.getUserinput("인형의 번호를 입력하세요(기회 1번에 3000원): ")) - 1
+                if 0 <= dollsIndex < len(self.machine.dolls):
+                    selectedDoll = self.machine.dolls[dollsIndex]
+                    self.machine.attemptGrab(selectedDoll)
                 else:
                     self.view.displayMessage("올바른 선택이 아닙니다.")
             elif choice == "3":

@@ -19,7 +19,10 @@ class CMController:
                 dollsIndex = int(self.view.getUserinput("인형의 번호를 입력하세요(기회 1번에 3000원): ")) - 1
                 if 0 <= dollsIndex < len(self.machine.dolls):
                     selectedDoll = self.machine.dolls[dollsIndex]
-                    self.machine.attemptGrab(selectedDoll)
+                    if selectedDoll.getCount() > 0:
+                        self.machine.attemptGrab(selectedDoll)
+                    else:
+                        self.view.displayMessage(f"{selectedDoll.name}의 재고가 없습니다. 다른 인형을 선택해주세요.")
                 else:
                     self.view.displayMessage("올바른 선택이 아닙니다.")
             elif choice == "3":

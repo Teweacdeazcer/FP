@@ -1,9 +1,8 @@
 class CMView:
-
     def displayDolls(self, dolls):
         print("뽑기 가능한 인형 목록:")
         for idx, doll in enumerate(dolls, start=1):
-            print(f"{idx}. {doll.name}")
+            print(f"{idx}. {doll.name} (남은 수량: {doll.count})")
 
     def displayMessage(self, message):
         print(message)
